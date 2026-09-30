@@ -13,6 +13,9 @@ authors = [
     { name = "Lio", email = "asdfghjkl202637@outlook.com" }
 ]
 
+[project.urls]
+Homepage = "https://github.com/dev-Lio-hello-world/ticktock-utils"
+
 # 这里加依赖
 dependencies = [
     "lunarcalendar>=0.0.9"
