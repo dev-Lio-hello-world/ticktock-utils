@@ -34,6 +34,9 @@ from .ticktock import (
     days_until_year_end,
     is_same_week,
     get_week_range,
+    lunar_to_solar,
+    solar_to_lunar,
+    get_zodiac,
     TimeError,
     MonthError,
     DayError,
@@ -75,9 +78,12 @@ __all__ = [
     "days_until_year_end",
     "is_same_week",
     "get_week_range",
+    "lunar_to_solar",
+    "solar_to_lunar",
+    "get_zodiac",
     "TimeError",
     "MonthError",
     "DayError",
 ]
 
-__version__ = "0.14.1"
+__version__ = "0.16.0"

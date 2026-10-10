@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ticktock_utils"
-version = "0.14.2"
+version = "0.16.0"
 description = "A tiny and easy-to-use time tool library"
 readme = "README.md"
 license = { text = "MIT" }
@@ -12,9 +12,6 @@ requires-python = ">=3.8"
 authors = [
     { name = "Lio", email = "asdfghjkl202637@outlook.com" }
 ]
-
-[project.urls]
-Homepage = "https://github.com/dev-Lio-hello-world/ticktock-utils"
 
 # 这里加依赖
 dependencies = [

@@ -6,6 +6,7 @@ from functools import lru_cache
 
 # 控制报错语言的变量（True=英文，False=中文）
 error_is_english = False
+easter_egg_is_english = False
 
 @lru_cache(maxsize=8)
 def _get_festival_dates(year: int):
@@ -24,6 +25,7 @@ def _get_festival_dates(year: int):
     ]
     result = []
     for (m, d) in festivals:
+        # noinspection broad-exception
         try:
             solar = Converter.Lunar2Solar(Lunar(year, m, d))
             result.append((solar.month, solar.day))
@@ -258,18 +260,32 @@ import random
 
 def zhuangge_quote() -> str:
     """随机返回一条装哥语录（彩蛋）"""
-    quotes = [
-        "我会 C++。",
-        "我爸爸是程序员，我知道变量，所以你们都是辣鸡。",
-        "我装的是 Python 4.0 绿色免安装版。",
-        "我用的是在线编译器。",
-        "我写代码不用 IDE，用记事本。",
-        "我用脑子跑算法，不用编译器。",
-        "我其实学过汇编，只是忘了。",
-        "这次我肯定赢。",
-        "这不是筛子，这是正宗应用。",
-        "我会 Vim。……:q!",
-    ]
+    if easter_egg_is_english:
+        quotes = [
+            "I know C++.",
+            "My dad is a programmer. I know what a variable is. You're all trash.",
+            "I'm running Python 4.0, green portable edition.",
+            "I use an online compiler.",
+            "I don't use an IDE. I use Notepad.",
+            "I run algorithms in my head, no compiler needed.",
+            "I actually learned assembly once. Just forgot it.",
+            "This time I'll definitely win.",
+            "This isn't a sieve. It's a genuine app.",
+            "I know Vim. ... :q!",
+        ]
+    else:
+        quotes = [
+            "我会 C++。",
+            "我爸爸是程序员，我知道变量，所以你们都是辣鸡。",
+            "我装的是 Python 4.0 绿色免安装版。",
+            "我用的是在线编译器。",
+            "我写代码不用 IDE，用记事本。",
+            "我用脑子跑算法，不用编译器。",
+            "我其实学过汇编，只是忘了。",
+            "这次我肯定赢。",
+            "这不是筛子，这是正宗应用。",
+            "我会 Vim。……:q!",
+        ]
     return random.choice(quotes)
 
 def time_ago(dt_str: str) -> str:
@@ -413,9 +429,38 @@ def days_until_next_festival() -> int:
 
 def secret_message():
     """运行后，打印出作者留下的一句话（彩蛋）"""
-    print("【ticktock 作者留言】")
-    if is_weekend():
-        print("今天是周末，记得好好休息，别写代码啦！")
+    if easter_egg_is_english:
+        title = "【ticktock - A Message from the Author】"
+        weekend_msg = "It's the weekend. Take a good rest — don't write code!"
+        workday_msg = "It's a workday. Keep coding, and may you achieve financial freedom soon!"
+        signature = "—— from a 4th-grade little programmer"
     else:
-        print("今天是工作日，加油写代码，争取早日实现财务自由！")
-    print("—— 来自一位四年级的小程序员")
+        title = "【ticktock 作者留言】"
+        weekend_msg = "今天是周末，记得好好休息，别写代码啦！"
+        workday_msg = "今天是工作日，加油写代码，争取早日实现财务自由！"
+        signature = "—— 来自一位四年级的小程序员"
+
+    print(title)
+    if is_weekend():
+        print(weekend_msg)
+    else:
+        print(workday_msg)
+    print(signature)
+
+def lunar_to_solar(year: int, month: int, day: int) -> tuple:
+    """把农历日期，转成公历日期，返回 (年, 月, 日)"""
+    lunar = Lunar(year, month, day)
+    solar = Converter.Lunar2Solar(lunar)
+    return solar.year, solar.month, solar.day
+
+def get_zodiac(year: int) -> str:
+    """根据年份，返回生肖
+
+    参数：
+        year: 公历年
+
+    返回：
+        生肖字符串，比如「鼠」「牛」……
+    """
+    zodiacs = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"]
+    return zodiacs[(year - 4) % 12]

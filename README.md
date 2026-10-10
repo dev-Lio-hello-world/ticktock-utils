@@ -60,9 +60,8 @@ except ticktock_utils.DayError:
 ```
 
 ## 更新日志🗓
-修复了is_same_week / get_week_range 没导出、import datetime + from datetime import datetime 在开头重复（这些在0.14.1修复）将days_until_next_festival提速
+更新了get_zodiac 根据输入年数 返回生肖。lunar_to_solar输入农历日期(数字)换成公历日期 bug：修改了__version__ = "0.15.0没有右引号，导入出错
 
 ## 📜 License
 
 MIT
-
