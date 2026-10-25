@@ -13,10 +13,10 @@ authors = [
     { name = "Lio", email = "asdfghjkl202637@outlook.com" }
 ]
 [project.urls]
-Homepage = "https://github.com/dev-lio-hello-world/ticktock_utils"
-Repository = "https://github.com/dev-lio-hello-world/ticktock_utils"
-Issues = "https://github.com/dev-lio-hello-world/ticktock_utils/issues"
-Changelog = "https://github.com/dev-lio-hello-world/ticktock_utils/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/dev-lio-hello-world/ticktock-utils"
+Repository = "https://github.com/dev-lio-hello-world/ticktock-utils"
+Issues = "https://github.com/dev-lio-hello-world/ticktock-utils/issues"
+Changelog = "https://github.com/dev-lio-hello-world/ticktock-utils/blob/main/CHANGELOG.md"
 
 # 这里加依赖
 dependencies = [
