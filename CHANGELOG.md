@@ -12,6 +12,12 @@
 
 - 规划未来的破坏性更新 (Breaking Changes)。
 
+## [1.1.3] - 2026-10-20
+
+### 新增 (Added)
+
+- 使用GitHub托管CHANGELOG.md
+
 ## [1.1.2] - 2026-10-20
 
 ### 新增 (Added)
