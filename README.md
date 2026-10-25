@@ -103,4 +103,4 @@ MIT
 - **get_ganzhi_full**
 - **get_season**
 
-👉 [点击这里查看 CHANGELOG.md](https://github.com/dev-lio-hello-world/ticktock_utils/blob/main/CHANGELOG.md)
+👉 [点击这里查看 CHANGELOG.md](https://github.com/dev-lio-hello-world/ticktock-utils/blob/main/CHANGELOG.md)
